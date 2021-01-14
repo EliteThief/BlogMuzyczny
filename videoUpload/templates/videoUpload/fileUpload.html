@@ -1,0 +1,18 @@
+{% extends "musicblog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Upload</legend>
+                {{ form|crispy }} <!--as_p = wyświetl jako paragrafy-->
+            </fieldset>
+            <input type="file" name="video">
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">
+                    Upload video
+                </button>
+            </div>
+    </form>
+{% endblock content %}

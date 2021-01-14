@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from videoUpload import views as upload_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('musicblog.urls')),
+    path('upload/', upload_views.upload_file, name='upload'),
 ]
