@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     category = models.CharField(max_length=30)
 
+
 class Post(models.Model):
     title = models.CharField(max_length=100)
     video = models.FileField()
@@ -16,6 +17,7 @@ class Post(models.Model):
     dislike = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+
 
 class Comments(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
